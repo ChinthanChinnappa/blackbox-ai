@@ -1,5 +1,5 @@
 // Entry point — starts the HTTP server
-require('dotenv').config({ path: '../.env' });
+require('dotenv').config();
 const app = require('./app');
 const pool = require('./config/db');
 

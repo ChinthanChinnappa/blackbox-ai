@@ -7,10 +7,10 @@ const pool = new Pool({
   database: process.env.DB_NAME || 'black_ai_platform',
   user: process.env.DB_USER || 'postgres',
   password: process.env.DB_PASSWORD || 'yourpassword',
-  // EDGE CASE: max connections not capped — can exhaust DB under heavy load
   max: 20,
   idleTimeoutMillis: 30000,
   connectionTimeoutMillis: 2000,
+  ssl: process.env.DB_SSL === 'false' ? false : { rejectUnauthorized: false },
 });
 
 pool.on('error', (err) => {
