@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: #e0e0e0;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  margin: 0;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #111; }
+::-webkit-scrollbar-thumb { background: #00ff88; border-radius: 3px; }
+
+/* Glow effects */
+.glow-green { box-shadow: 0 0 8px rgba(0, 255, 136, 0.4); }
+.glow-red { box-shadow: 0 0 8px rgba(255, 51, 102, 0.4); }
+.text-glow { text-shadow: 0 0 8px rgba(0, 255, 136, 0.6); }
+
+/* Terminal cursor blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+.cursor-blink::after {
+  content: '_';
+  animation: blink 1s infinite;
+  color: #00ff88;
+}
